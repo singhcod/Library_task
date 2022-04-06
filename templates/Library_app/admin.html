@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'Library_app/cdnlines.html' %}
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="{% url 'home' %}">Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link"  href="{% url 'adminpanel' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'signup' %}">Admin Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Admin Login</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'userdetail' %}">Admin Detials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Admin Logout</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="display-4" style="text-align: center">Welcome To Admin Panel</h1>
+
+  <hr class="my-4">
+  <p>Some Options Are Given To perform Operation On Admin Panel</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'dispaly_all' %}" role="button">Get All Books</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">Add Book</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'update' %}" role="button">Update Book</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'showdelete' %}" role="button">Delete Book</a>
+  </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+{% extends 'Library_app/base.html' %}
+
+{% block content %}
+    {% include 'Library_app/navbar.html' %}
+    <body style="background-color: lightsalmon">
+    <div class="container-fluid">
+        <h2 style="text-align: center">Available Book Are...</h2>
+        <div class="row">
+            <div class=" offset-md-3 col-lg-6">
+            {% if books %}
+
+                <table class="table table-bordered bg-white">
+                    <thead>
+                    <tr>
+                        <td>Book ID:</td>
+                        <th>BOOk Name</th>
+                        <th>Book Price</th>
+                        <th>Book Page</th>
+                        <th>Book Author </th>
+                        <th>Book Publisher</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{ book.id }}</td>
+                            <td>{{ book.book_name }}</td>
+                            <td>{{ book.book_price }}</td>
+                            <td>{{ book.book_pages }}</td>
+                            <td>{{ book.book_author}}</td>
+                            <td>{{ book.book_publisher }}</td>
+                            <td>
+                                <a href="{% url 'update_book'  book.id %}" class="btn btn-sm btn-success">Update</a>
+                                <a href="{% url  'delete' book.id %}" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h2>No Books Are Available:</h2>
+            {% endif %}
+                <center>
+
+                    <a href="{% url 'create' %}" class="btn btn-primary">ADD Book</a>
+                </center>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
+
+
+

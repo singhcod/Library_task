@@ -1,0 +1,48 @@
+{% extends 'Library_app/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block content %}
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#">Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link"  href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'adminpanel' %}">Admin Panel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'studentpanel' %}">Student Panel</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="jumbotron">
+  <h1 class="display-4" style="text-align: center">Welcome to Degital Library:</h1>
+  <p class="lead">Welcome Student's We Are providing A Digital Library So please Visit Our Site.</p>
+  <hr class="my-4" style="text-align: center">
+  <p>Choose According to your Status!!.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'adminpanel' %}" role="button">Admin Panel</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'studentpanel' %}" role="button">Student Panel</a>
+  </p>
+</div>
+
+
+</body>
+{% endblock %}
+</html>

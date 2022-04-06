@@ -1,0 +1,30 @@
+{% extends 'Library_app/base.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% block content %}
+    {% include 'Library_app/navbar.html' %}
+    <body style="text-align: center">
+    <h2 style="background-color: lavenderblush">Admin Register Here:</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-md-3 col-md-4">
+                <form action="signup" method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <input type="submit" value="Signup" class="btn btn-success">
+                    <input type="reset" value="Cancel" class="btn btn-danger">
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'login' %}">Are Your Already Signup Login Here..</a>
+    </body>
+{% endblock %}
+</html>

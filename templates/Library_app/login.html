@@ -1,0 +1,32 @@
+
+{% extends 'Library_app/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% block content %}
+    {% include 'Library_app/navbar.html' %}
+    <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-md-3 col-md-4">
+                <h1>Please Login Here</h1>
+                <form action="login" method="POST">
+                    {% csrf_token %}
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" class="form-control"><br><br>
+                    <label for="">Password</label>
+                    <input type="text" id="password" name="password" class="form-control"><br><br>
+                    <input type="submit" value="Login" class="btn btn-success">
+                    <input type="reset" value="Cancel" class="btn btn-danger">
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
+</html>

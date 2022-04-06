@@ -1,0 +1,40 @@
+{% extends 'Library_app/base.html' %}
+<html>
+<head>
+    <title>Crate_Book</title>
+</head>
+{% block content%}
+    {% include 'Library_app/navbar.html' %}
+<body>
+<h1 style="text-align: center">Please Make a Book Entery</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-3 col-md-4">
+            <form method="POST">
+                {% csrf_token %}
+
+                <label>Enter Book Name</label>
+                <input type="text" name="book_name" class="form-control" placeholder="Book Name">
+
+                <label>Enter Book Price</label>
+                <input type="number" name="book_price" class="form-control" placeholder="Book Price">
+
+                <label>Enter Book Pages</label>
+                <input type="number" name="book_pages" class="form-control" placeholder="Book Pages">
+
+                <label>Enter Book Author Name</label>
+                <input type="text" name="book_author" class="form-control" placeholder="Book Author Name">
+
+                <label>Enter Book Publishar Name:</label>
+                <input type="text" name="book_publisher" class="form-control" placeholder="Book Publisher Name">
+
+                <input type="submit" value=" add" class="btn btn-success">
+                <input type="reset" value=" cancel" class="btn btn-danger">
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>
